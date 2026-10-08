@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class NetworkRoutingSimulator {
+    static class Edge { int to, cost; Edge(int t,int c){to=t;cost=c;} }
+    static int[] dijkstra(List<Edge>[] g,int src){
+        int n=g.length; int[] d=new int[n]; Arrays.fill(d,Integer.MAX_VALUE); d[src]=0;
+        PriorityQueue<int[]> pq=new PriorityQueue<>(Comparator.comparingInt(a->a[1])); pq.add(new int[]{src,0});
+        while(!pq.isEmpty()){ int[] x=pq.poll(); int u=x[0]; if(x[1]!=d[u])continue;
+            for(Edge e:g[u]) if(d[e.to]>d[u]+e.cost){d[e.to]=d[u]+e.cost;pq.add(new int[]{e.to,d[e.to]});}}
+        return d;
+    }
+    public static void main(String[] args){
+        int n=20; List<Edge>[] g=new List[n]; for(int i=0;i<n;i++)g[i]=new ArrayList<>();
+        Random r=new Random(42); for(int i=0;i<60;i++){int a=r.nextInt(n),b=r.nextInt(n);if(a!=b){int c=1+r.nextInt(20);g[a].add(new Edge(b,c));g[b].add(new Edge(a,c));}}
+        int[] d=dijkstra(g,0); System.out.println("Shortest network costs from node 0:");
+        System.out.println(Arrays.toString(d));
+    }
+}
