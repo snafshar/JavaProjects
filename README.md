@@ -1,9 +1,18 @@
 # Java Projects
 
-I use this repository to practise Java 17, object-oriented design, collections,
-streams, and small testable domain models.
+Java 17 exercises covering algorithms, collections, streams, immutable data models, and networking.
 
 ## Projects
 
-- `Measurements.java` — stream-based device analytics
-- `StudyPlanner.java` — immutable study-task model and prioritisation
+- `src/NetworkRoutingSimulator.java` — weighted graph routing with Dijkstra
+- `projects/Measurements.java` — stream-based device statistics
+- `projects/StudyPlanner.java` — immutable study-task filtering and prioritisation
+
+## Compile
+
+```bash
+javac src/NetworkRoutingSimulator.java
+java -cp src NetworkRoutingSimulator
+```
+
+Individual projects under `projects/` can be compiled and run with Java 17.
