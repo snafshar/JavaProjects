@@ -1,0 +1,27 @@
+name: TaskTrail CI
+
+on:
+  push:
+    paths:
+      - "exercises/2026-10-19/TaskTrail/**"
+      - ".github/workflows/tasktrail-ci.yml"
+  pull_request:
+    paths:
+      - "exercises/2026-10-19/TaskTrail/**"
+      - ".github/workflows/tasktrail-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Compile and test
+        run: sh exercises/2026-10-19/TaskTrail/run-tests.sh
