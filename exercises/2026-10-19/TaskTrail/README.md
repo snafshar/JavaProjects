@@ -6,7 +6,7 @@ TaskTrail is a small terminal task tracker that stores tasks in a local tab-sepa
 
 ```bash
 cd exercises/2026-10-19/TaskTrail
-./run-tests.sh
+sh run-tests.sh
 javac *.java
 java TaskTrail add "Review algorithms"
 java TaskTrail list
@@ -14,7 +14,7 @@ java TaskTrail done 1
 java TaskTrail list
 ```
 
-The source launcher `java TaskTrail.java` is not used because TaskTrail depends on the separate model and service classes; compile the folder first. Generated class files are ignored by Git.
+Using `sh run-tests.sh` does not depend on the executable bit being preserved by a file upload. Generated class files are ignored by Git.
 
 Set `TASKTRAIL_FILE` to choose a different data file. The default is `tasks.tsv` in the current directory. The file format stores a numeric ID, a status, and a Base64-encoded UTF-8 title separated by tabs.
 
