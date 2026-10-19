@@ -19,7 +19,7 @@ javac src/NetworkRoutingSimulator.java
 javac src/NetworkHealth.java
 java -cp src NetworkHealth
 cd exercises/2026-10-19/TaskTrail
-./run-tests.sh
+sh run-tests.sh
 ```
 
-Individual projects under `projects/` can be compiled and run with Java 17. TaskTrail uses Java 17 and stores its data in a local TSV file.
+Individual projects under `projects/` can be compiled and run with Java 17. TaskTrail uses Java 17 and stores its data in a local TSV file; use `sh run-tests.sh` so the test runner also works when checked out without executable file permissions.
