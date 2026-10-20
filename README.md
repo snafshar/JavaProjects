@@ -1,25 +1,11 @@
 # Java Projects
 
-Java 17 exercises covering algorithms, collections, streams, immutable data models, and networking.
+Java exercises for algorithms, collections, CLI design, and software engineering.
 
-## Projects
+## Engineering notes
+- [Collections guide](exercises/2026-10-20/java-notes/collections-guide.md)
+- [Input validation](exercises/2026-10-20/java-notes/input-validation.md)
+- [Immutability](exercises/2026-10-20/java-notes/immutability.md)
+- [Exception handling](exercises/2026-10-20/java-notes/exceptions.md)
 
-- `src/NetworkRoutingSimulator.java` — weighted graph routing with Dijkstra
-- `src/NetworkHealth.java` — validates latency/loss measurements and classifies network health
-- `projects/Measurements.java` — stream-based device statistics
-- `projects/StudyPlanner.java` — immutable study-task filtering and prioritisation
-- [NumberQuest](https://github.com/snafshar/JavaProjects/tree/main/games/NumberQuest) — terminal number guessing game
-- [Starship Salvage](https://github.com/snafshar/JavaProjects/tree/main/games/StarshipSalvage) — console game exercise
-- [TaskTrail](https://github.com/snafshar/JavaProjects/tree/main/exercises/2026-10-19/TaskTrail) — file-backed task tracker with a service layer and dependency-free tests
-
-## Compile
-
-```bash
-javac src/NetworkRoutingSimulator.java
-javac src/NetworkHealth.java
-java -cp src NetworkHealth
-cd exercises/2026-10-19/TaskTrail
-sh run-tests.sh
-```
-
-Individual projects under `projects/` can be compiled and run with Java 17. TaskTrail uses Java 17 and stores its data in a local TSV file; use `sh run-tests.sh` so the test runner also works when checked out without executable file permissions.
+Prefer small examples with documented contracts, boundary tests, and clear failure behavior.
